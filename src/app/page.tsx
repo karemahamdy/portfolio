@@ -1,4 +1,4 @@
-import Canvas from "@/_components/ui/Canvas";
+import Canvas from "@/_components/Canvas";
 import "./globals.css";
 
 const Home: React.FC = () => {
