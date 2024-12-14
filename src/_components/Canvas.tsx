@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 
 const Canvas: React.FC = () => {
-
   useEffect(() => {
     const background = document.getElementById("bgCanvas") as HTMLCanvasElement;
     const bgCtx = background.getContext("2d");
@@ -12,19 +11,6 @@ const Canvas: React.FC = () => {
     if (bgCtx) {
       background.width = width;
       background.height = height;
-
-      
-      bgCtx.fillStyle = "black";
-      bgCtx.fillRect(0, 0, width, height);
-      
-      bgCtx.fillStyle = "rgba(63, 63, 63, 0.6)";
-      for (let x = 0; x < width; x += 20) {
-        for (let y = 0; y < height; y += 20) {
-          bgCtx.beginPath();
-          bgCtx.arc(x, y, 1, 0, Math.PI * 2);
-          bgCtx.fill();
-        }
-      }
 
       class ShootingStar {
         x: number;
@@ -71,30 +57,16 @@ const Canvas: React.FC = () => {
       }
 
       const entities: ShootingStar[] = [];
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 10; i++) {
         entities.push(new ShootingStar());
       }
 
       const animate = () => {
-      
-        bgCtx.fillStyle = "black";
-        bgCtx.fillRect(0, 0, width, height); 
+        bgCtx.clearRect(0, 0, width, height); // Clear the canvas for each frame
 
-      
-        bgCtx.fillStyle = "rgba(63, 63, 63, 0.6)";
-        for (let x = 0; x < width; x += 20) {
-          for (let y = 0; y < height; y += 20) {
-            bgCtx.beginPath();
-            bgCtx.arc(x, y, 1, 0, Math.PI * 2);
-            bgCtx.fill();
-          }
-        }
-
-      
         bgCtx.strokeStyle = "#A06FC2";
         entities.forEach((entity) => entity.update());
 
-      
         requestAnimationFrame(animate);
       };
 
@@ -103,7 +75,7 @@ const Canvas: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div id="bgWrapper">
       <canvas id="bgCanvas"></canvas>
     </div>
   );

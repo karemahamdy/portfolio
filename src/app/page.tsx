@@ -5,7 +5,7 @@ import Profile from "@/_components/Profile";
 const Home: React.FC = () => {
   return (
     <div className="relative h-screen w-full ">
-    <Canvas/>
+      <Canvas/>
     <Profile/>
     </div>
   );
