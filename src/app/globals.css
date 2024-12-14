@@ -35,3 +35,33 @@ canvas {
   height: 100%;
   z-index: -1;
 }
+
+
+.karema-wrapper {
+  position: relative;
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.karema-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  background: conic-gradient(rgb(12, 10, 9), #a57474);
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+  filter: blur(20px);
+  z-index: -5;
+}
+
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
