@@ -1,6 +1,5 @@
-import Armory from "@/ui/Armory";
 import "./globals.css";
-import Main from "@/app/Main";
+import Main from "@/_components/Tabs";
 import Profile from "@/_components/Profile";
 import Canvas from "@/_components/Canvas";
 
@@ -11,7 +10,6 @@ const Home: React.FC = () => {
       <Canvas/>
       <Profile/>
       <Main/>
-
     </main>
 
   );

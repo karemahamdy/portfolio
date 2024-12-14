@@ -16,7 +16,7 @@ body {
   background-color: black;
   background-image: radial-gradient(rgb(65, 65, 65) 1px, transparent 1px);
   background-size: 30px 34px;
-    
+
 }
 
 #bgCanvas {
@@ -29,12 +29,12 @@ body {
 }
 
 main {
-    position: relative;
-        z-index:  1;
-          gap: 1rem;
-        justify-content: space-around;
-        align-items:center;
-      
+  position: relative;
+  z-index: 1;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+
 }
 
 .karema-wrapper {
