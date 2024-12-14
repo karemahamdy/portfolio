@@ -1,13 +1,18 @@
+import  Img  from "./Img";
+
 const Profile: React.FC = () => {
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-      <h1 className="text-xl font-bold ">
-      Hello, Karema Hamdy
+    <>
+    <div className="flex flex-col items-center justify-center text-center relative translate-x-0 translate-y-32 text-white">
+    <Img/>
+      <h1 className="text-[24px] font-bold">
+      Hello, I am Karema Hamdy
       </h1>
-      <p className="text-xl mt-4">
-        Frontend Software Engineer.
+      <p className="text-[20px]">
+        Frontend  Software  Engineer.
       </p>
     </div>
+    </>
   );
 };
 
