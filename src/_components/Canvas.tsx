@@ -75,7 +75,7 @@ const Canvas: React.FC = () => {
   }, []);
 
   return (
-    <div >
+    <div>
       <canvas id="bgCanvas"></canvas>
     </div>
   );

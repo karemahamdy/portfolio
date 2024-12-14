@@ -1,14 +1,8 @@
+// src/_components/magicui/icon-cloud.tsx
 'use client';
 
-import { useEffect, useMemo, useState } from "react";
-import { useTheme } from "next-themes";
-import {
-  Cloud,
-  fetchSimpleIcons,
-  ICloud,
-  renderSimpleIcon,
-  SimpleIcon,
-} from "react-icon-cloud";
+import { Cloud, fetchSimpleIcons, ICloud, renderSimpleIcon, SimpleIcon } from "react-icon-cloud";
+import { useEffect, useState } from "react";
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
@@ -36,55 +30,45 @@ export const cloudProps: Omit<ICloud, "children"> = {
   },
 };
 
-export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
-  const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
-  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
-  const minContrastRatio = theme === "dark" ? 2 : 1.2;
-
-  return renderSimpleIcon({
-    icon,
-    bgHex,
-    fallbackHex,
-    minContrastRatio,
-    size: 42,
-    aProps: {
-      href: undefined,
-      target: undefined,
-      rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
-    },
-  });
-};
-
-export type DynamicCloudProps = {
-  iconSlugs: string[];
-};
-
-type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
-
-export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
-  const [mounted, setMounted] = useState(false);
-  const [data, setData] = useState<IconData | null>(null);
-  const { theme } = useTheme();
+export default function IconCloud({ iconSlugs }: { iconSlugs: string[] }) {
+  const [icons, setIcons] = useState<SimpleIcon[]>([]);
 
   useEffect(() => {
-    setMounted(true);
-    fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
-  }, [iconSlugs]);
+    const loadIcons = async () => {
+      try {
+        const { simpleIcons } = await fetchSimpleIcons({ slugs: iconSlugs });
+        setIcons(Object.values(simpleIcons));
+      } catch (error) {
+        console.error("Failed to fetch icons:", error);
+      }
+    };
 
-  const renderedIcons = useMemo(() => {
-    if (!data) return null;
+    loadIcons();
+  }, []); // Empty dependency array to load only once
 
-    return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light")
-    );
-  }, [data, theme]);
+  // Simplified icon rendering without theme dependency
+  const renderedIcons = icons.map((icon) =>
+    renderSimpleIcon({
+      icon,
+      size: 42,
+      aProps: {
+        href: undefined,
+        target: undefined,
+        rel: undefined,
+        onClick: (e: any) => e.preventDefault(),
+      },
+    })
+  );
 
-  if (!mounted) return null;
+  // Prevent server-side rendering
+  if (typeof window === 'undefined' || renderedIcons.length === 0) {
+    return null;
+  }
 
   return (
     <Cloud {...cloudProps}>
-      <>{renderedIcons}</>
+      {renderedIcons}
     </Cloud>
   );
 }
+

@@ -1,16 +1,19 @@
-import Canvas from "@/_components/Canvas";
+import Armory from "@/ui/Armory";
 import "./globals.css";
+import Main from "@/app/Main";
 import Profile from "@/_components/Profile";
-import Armory from "@/_components/Armory";
+import Canvas from "@/_components/Canvas";
 
 
 const Home: React.FC = () => {
   return (
-    <main className="" id="bgWrapper">
-    <Canvas/>
-      <Profile />
-      {/* <Armory/> */}
+    <main className='flex flex-col justify-center items-center'>
+      <Canvas/>
+      <Profile/>
+      <Main/>
+
     </main>
+
   );
 };
 

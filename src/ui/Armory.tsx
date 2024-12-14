@@ -1,5 +1,7 @@
 'use client';
-import IconCloud from "./magicui/icon-cloud";
+
+import IconCloud from "../_components/magicui/icon-cloud"
+
 
 const slugs = [
   'java',
@@ -8,11 +10,17 @@ const slugs = [
   'react',
   'html5',
   'css3',
+  'express',
   'nodejs',
   'nextjs',
+  'nestjs',
+  'prisma',
   'postgresql',
   'firebase',
+  'nginx',
   'vercel',
+  'jest',
+  'docker',
   'git',
   'github',
   'bootstrap',
@@ -23,9 +31,18 @@ const slugs = [
   'vite',
   'chakraui',
   'mui',
+  'graphql',
   'supabase',
+  'socketdotio',
+  'flask',
   'python',
   'mongodb',
+  'redis',
+  'c',
+  'cplusplus',
+  'bash',
+  'linux',
+  'macos',
   'postman',
   'photoshop',
   'illustrator',
@@ -33,9 +50,6 @@ const slugs = [
   'aftereffects',
   'apple',
   'drizzle',
-  'figma',
-  'Java',
-  'C++'
 ]
 
 export default function Armory() {
@@ -43,5 +57,5 @@ export default function Armory() {
     <div className="relative flex h-full w-full max-w-[32rem] items-center justify-center overflow-hidden bg-background px-20 pb-20">
       <IconCloud iconSlugs={slugs} />
     </div>
-  );
+  )
 }
