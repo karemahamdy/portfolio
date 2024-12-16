@@ -65,3 +65,12 @@ main {
     transform: rotate(360deg);
   }
 }
+
+.ant-timeline-item-tail {
+	background-color: #666666;
+}
+
+ .ant-timeline-item-head-blue {
+    background-color: #666666 !important;
+    border-color: #A06FC2 !important;
+}

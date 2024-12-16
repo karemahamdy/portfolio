@@ -9,6 +9,7 @@ export default function Time() {
   return (
     <div className="flex justify-center">
       <Timeline
+      
         mode="alternate"
         pending={
           <span className="text-xs sm:text-sm">
@@ -18,7 +19,7 @@ export default function Time() {
         className="flex-1 text-xs sm:text-base text-stone-200"
       >
         {TIMELINE_DATA.map((item, index) => (
-          <Timeline.Item key={index}>
+          <Timeline.Item key={index} >
             <motion.div
               initial={{ x: index % 2 === 0 ? 100 : -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -34,7 +35,7 @@ export default function Time() {
                   <a
                     href={item.url}
                     target="_blank"
-                    className="text-[#69b1ff]"
+                    className="text-[#EF4885]"
                   >
                     {item.extName}{' '}
                   </a>
