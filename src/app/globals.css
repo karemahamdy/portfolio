@@ -70,7 +70,12 @@ main {
 	background-color: #666666;
 }
 
- .ant-timeline-item-head-blue {
-    background-color: #666666 !important;
-    border-color: #A06FC2 !important;
+.ant-timeline-item:not(:last-child) .ant-timeline-item-head {
+  background-color: #666666 !important;
+  border-color: #A06FC2 !important;
+}
+
+.ant-timeline-item:last-child .ant-timeline-item-head {
+  background-color: unset !important;
+  border-color: unset !important;
 }
