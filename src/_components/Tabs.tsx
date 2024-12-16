@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Armory from '../ui/Armory'
-// import Time from '@/components/Time'
+import Time from './Time'
+
 
 export default function Main() {
   
@@ -12,7 +13,7 @@ export default function Main() {
           <TabsTrigger value="armory">Armory</TabsTrigger>
         </TabsList>
         <TabsContent value="timeline">
-          {/* <Time /> */}
+          <Time/>
         </TabsContent>
         <TabsContent value="armory">
           <Armory />
