@@ -7,7 +7,7 @@ export const TIMELINE_DATA = [
   {
     description: 'Frontend developer at',
     extName: '  Cloud Secrets',
-    url: 'https://www.linkedin.com/school/alx-academy/posts',
+    url: 'https://www.linkedin.com/company/cloud-secrets/posts/?feedView=all',
   },
   {
     description: 'Frontend Eng. Intern at',
@@ -17,7 +17,6 @@ export const TIMELINE_DATA = [
     {
     description: 'Developed',
     extName: 'avventure',
-    url: 'https://www.rentop.co/en',
     rest: 'website',
   },
 
