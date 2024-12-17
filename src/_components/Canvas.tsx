@@ -42,11 +42,14 @@ const Canvas: React.FC = () => {
             if (this.x < 0 || this.y >= height) {
               this.reset();
             } else {
-              bgCtx.lineWidth = this.size;
-              bgCtx.beginPath();
-              bgCtx.moveTo(this.x, this.y);
-              bgCtx.lineTo(this.x + this.len, this.y - this.len);
-              bgCtx.stroke();
+              if (bgCtx) {
+                bgCtx.lineWidth = this.size;
+                bgCtx.beginPath();
+                bgCtx.moveTo(this.x, this.y);
+                bgCtx.lineTo(this.x + this.len, this.y - this.len);
+                bgCtx.stroke();
+              }
+        
             }
           } else {
             if (this.waitTime < new Date().getTime()) {
