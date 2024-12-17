@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import Image from 'next/image';
 import React from 'react'
 
 export function Img() {
@@ -16,7 +16,7 @@ export function Img() {
           priority
           className="rounded-full object-cover w-[90%] h-[90%] z-10"
           src="/karema.jpg"
-          alt="karma"
+          alt="karema"
           width={200}
           height={200}
         />

@@ -62,7 +62,7 @@ const Canvas: React.FC = () => {
       }
 
       const animate = () => {
-        bgCtx.clearRect(0, 0, width, height); 
+        bgCtx.clearRect(0, 0, width, height);
 
         bgCtx.strokeStyle = "#A06FC2";
         entities.forEach((entity) => entity.update());

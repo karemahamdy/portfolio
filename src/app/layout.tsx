@@ -1,10 +1,10 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { Raleway } from 'next/font/google'
+// import { Raleway } from 'next/font/google'
 
 import './globals.css'
 
-const raleway = Raleway({ subsets: ['latin'] })
+// const raleway = Raleway({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Karema - Frontend Software Engineer',
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={raleway.className}
+        // className={raleway.className}
       >
         {children}
       </body>
