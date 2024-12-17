@@ -58,12 +58,8 @@ export default function Main() {
         </TabsContent>
         <TabsContent
           value="armory"
-          className="  
-            p-6 
-            transition-all 
-            duration-500 
-            ease-in-out
-          "
+            
+        
         >
           <Armory />
         </TabsContent>
