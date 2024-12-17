@@ -13,13 +13,13 @@ const Canvas: React.FC = () => {
       background.height = height;
 
       class ShootingStar {
-        x: number;
-        y: number;
-        len: number;
-        speed: number;
-        size: number;
-        waitTime: number;
-        active: boolean;
+        x: number = 0;
+        y: number = 0;
+        len: number = 0;
+        speed: number = 0;
+        size: number = 0;
+        waitTime: number = 0;
+        active: boolean = false;
 
         constructor() {
           this.reset();
@@ -55,6 +55,7 @@ const Canvas: React.FC = () => {
           }
         }
       }
+
 
       const entities: ShootingStar[] = [];
       for (let i = 0; i < 10; i++) {
